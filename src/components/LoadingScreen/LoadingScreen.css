@@ -1,0 +1,87 @@
+/* Import "Press Start 2P" font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Loading Screen Background */
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000000; /* Updated background color */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Firefly Glow S Styling */
+.big-s {
+  font-size: 8rem; /* Large font size */
+  font-weight: bold;
+  font-family: 'Press Start 2P', cursive; /* Change font to Press Start 2P */
+  color: #00df9a; /* Teal green */
+  text-shadow:
+    0 0 2px #00df9a,
+    0 0 4px #00df9a; /* Reduced glow effect */
+  position: relative;
+  z-index: 10; /* Ensure "S" is in front of the circles */
+}
+
+/* Firefly-Like Circles Around the S */
+.circle {
+  position: absolute;
+  border-radius: 48%;
+  border: 1px solid #00df9a; /* Teal green */
+  opacity: 0.7;
+  animation: pulse 1.5s ease-in-out infinite;
+  z-index: 1; /* Circles behind the "S" */
+  box-shadow:
+    0 0 3px #00df9a,
+    0 0 6px #00df9a; /* Slightly reduced glow effect for the circles */
+}
+
+.circle-1 {
+  width: 250px;
+  height: 250px;
+  animation-duration: 2s;
+  animation-delay: 0s; /* No delay */
+}
+
+.circle-2 {
+  width: 300px;
+  height: 300px;
+  animation-duration: 2.5s;
+  animation-delay: 0.5s; /* Delay the animation slightly */
+}
+
+.circle-3 {
+  width: 350px;
+  height: 350px;
+  animation-duration: 3s;
+  animation-delay: 1s; /* Delay the animation slightly more */
+}
+
+/* Circle pulsating animation */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .big-s {
+    font-size: 4rem; /* Adjust font size */
+  }
+
+  .circle-1,
+  .circle-2,
+  .circle-3 {
+    width: 150px; /* Adjust width for smaller screens */
+    height: 150px;
+  }
+}
